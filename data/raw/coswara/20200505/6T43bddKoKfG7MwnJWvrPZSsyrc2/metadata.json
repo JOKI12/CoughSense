@@ -1,0 +1,22 @@
+{
+    "a": 40,
+    "asthma": true,
+    "cld": true,
+    "cold": true,
+    "cough": true,
+    "covid_status": "positive_mild",
+    "dT": "web",
+    "diabetes": true,
+    "ep": "y",
+    "fV": 2,
+    "fever": true,
+    "g": "male",
+    "ht": true,
+    "ihd": true,
+    "l_c": "India",
+    "l_s": "Assam",
+    "loss_of_smell": true,
+    "pneumonia": true,
+    "rU": "n",
+    "smoker": true
+}

@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit
+.streamlit/
+*.log
+
+# Data (Raw large archives, but keep small test samples or READMEs)
+*.zip
+*.tar.gz*
+data/raw/coughvid_full/
+data/processed/*.parquet
+
+# OS specific
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+{
+  "best_model_name": "SVM",
+  "best_f1_score": 0.5608,
+  "selected_criterion": "f1_macro",
+  "timestamp": "2026-11-08 13:49:18"
+}

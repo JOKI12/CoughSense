@@ -1,0 +1,33 @@
+{
+  "total_recordings": 77,
+  "total_participants": 40,
+  "classes": {
+    "0": "Healthy",
+    "1": "Respiratory_Abnormality"
+  },
+  "class_distribution": {
+    "Healthy": 40,
+    "Respiratory_Abnormality": 37
+  },
+  "splits": {
+    "train": {
+      "recordings": 49,
+      "participants": 26,
+      "healthy": 26,
+      "abnormal": 23
+    },
+    "validation": {
+      "recordings": 12,
+      "participants": 6,
+      "healthy": 6,
+      "abnormal": 6
+    },
+    "test": {
+      "recordings": 16,
+      "participants": 8,
+      "healthy": 8,
+      "abnormal": 8
+    }
+  },
+  "num_features": 91
+}

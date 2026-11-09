@@ -1,0 +1,19 @@
+{
+    "a": 25,
+    "cold": true,
+    "cough": true,
+    "covid_status": "positive_mild",
+    "dT": "web",
+    "ep": "y",
+    "fV": 2,
+    "fever": true,
+    "ftg": true,
+    "g": "male",
+    "l_c": "India",
+    "l_l": "Mangalore",
+    "l_s": "Karnataka",
+    "mp": true,
+    "rU": "n",
+    "st": true,
+    "um": "n"
+}

@@ -1,0 +1,87 @@
+# CoughSense - Configuration des Paramètres de Traitement du Signal et Machine Learning
+
+project:
+  name: "CoughSense"
+  title: "Analyse et classification des signaux de toux"
+  subtitle: "Traitement du signal et apprentissage automatique pour le dépistage expérimental des affections respiratoires"
+  version: "1.0.0"
+  course: "Master S3 - Traitement du Signal & Systèmes Embarqués"
+
+audio:
+  target_sample_rate: 16000
+  channels: 1
+  min_duration_sec: 0.3
+  max_duration_sec: 15.0
+  bit_depth: 16
+
+preprocessing:
+  peak_normalization: 0.95
+  noise_reduction:
+    enabled: true
+    method: "spectral_subtraction"  # Soustraction spectrale basée sur le profil de bruit des trames initiales/calmes
+    noise_reduction_db: 12.0
+  bandpass_filter:
+    enabled: true
+    type: "butterworth"
+    order: 4
+    low_cutoff_hz: 80.0
+    high_cutoff_hz: 4000.0
+  segmentation:
+    enabled: true
+    method: "energy_envelope"
+    frame_length: 512
+    hop_length: 128
+    threshold_multiplier: 1.25
+    min_event_duration_sec: 0.10
+    pad_duration_sec: 0.05
+
+spectral_analysis:
+  fft:
+    n_fft: 1024
+    window: "hann"
+  stft:
+    n_fft: 512
+    win_length: 512
+    hop_length: 128
+    window: "hann"
+  mel_spectrogram:
+    n_mels: 64
+    f_min: 50.0
+    f_max: 7500.0
+  mfcc:
+    n_mfcc: 13
+    include_deltas: true
+    include_delta_deltas: true
+
+machine_learning:
+  random_seed: 42
+  test_size: 0.20
+  val_size: 0.10
+  cross_validation_folds: 5
+  models:
+    svm:
+      kernel: "rbf"
+      C: 2.0
+      gamma: "scale"
+      probability: true
+    random_forest:
+      n_estimators: 150
+      max_depth: 12
+      min_samples_split: 4
+      random_state: 42
+    knn:
+      n_neighbors: 5
+      weights: "distance"
+      metric: "minkowski"
+    cnn:
+      enabled: true
+      epochs: 30
+      batch_size: 16
+      learning_rate: 0.001
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  metrics_file: "models/model_metrics.json"
+  feature_names_file: "models/feature_names.json"
